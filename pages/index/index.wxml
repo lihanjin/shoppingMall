@@ -1,13 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+	<!-- <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+			<van-sidebar-item title="标签名称" />
+			<van-sidebar-item title="标签名称" />
+			<van-sidebar-item title="标签名称" />
+		</van-sidebar> -->
+	<van-tree-select items="{{ items }}" height="100%" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" />
 </view>
